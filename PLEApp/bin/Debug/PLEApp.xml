@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PLEApp</name>
+    </assembly>
+    <members>
+        <member name="T:PLEApp.Circle">
+            <summary>
+            Circle Class,The class inherited from the specific version of the shapes
+            This class possess os some distinctive qualities
+            </summary>
+        </member>
+        <member name="F:PLEApp.Circle.radius">
+            <summary>
+            The radius is a distinctive property of Circle
+            it has been declared an integer
+            </summary>
+        </member>
+        <member name="M:PLEApp.Circle.set(System.Drawing.Color,System.Boolean,System.Int32[])">
+             <summary>
+            Method overrides the set method from Shapes class.
+             All the properties required for creating/drawing circle 
+             all come in the order:color,fill status and radius
+             </summary>
+             <param name="color"></param>
+             <param name="fill"></param>
+             <param name="list"></param>
+        </member>
+        <member name="M:PLEApp.Circle.draw(System.Drawing.Graphics)">
+             <summary>
+            Overriding the draw method from Shape class.
+             Specifically draws a circle with the help of Graphics.DrawEllipse method
+             uses the paramteres set from the set method
+             </summary>
+             <param name="g"></param>
+        </member>
+        <member name="M:PLEApp.Form1.saveToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            This private method saves a program written in the Program Box to D: drive
+            </summary>
+            <param name="sender"></param>
+            <param name="e">The event that is triggered when the menu item is clicked </param>
+        </member>
+        <member name="M:PLEApp.Form1.loadToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            This private method opens a File Dialog box and prompts user to choose a program text file.
+            </summary>
+            <param name="sender"></param>
+            <param name="e">The event that is triggered when the menu item is clicked</param>
+        </member>
+        <member name="F:PLEApp.Form1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLEApp.Form1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLEApp.Form1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PLEApp.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:PLEApp.Rectangle">
+            <summary>
+            Rectangle, a more specific version of Shape, class inherited from it.
+            Has some unique properties.
+            </summary>
+        </member>
+        <member name="F:PLEApp.Rectangle.width">
+            <summary>
+            width and height, some unique properties of Rectancle class declared as integers 
+            </summary>
+        </member>
+        <member name="F:PLEApp.Rectangle.height">
+            <summary>
+            width and height, some unique properties of Rectancle class declared as integers 
+            </summary>
+        </member>
+        <member name="M:PLEApp.Rectangle.set(System.Drawing.Color,System.Boolean,System.Int32[])">
+            <summary>
+            Method overrides the set method from Shapes class.
+            All the properties required for creating/drawing rectangle 
+            all come in the order:color,fill status , width and height
+            </summary>
+            <param name="color"> </param>
+            <param name="fill"></param>
+            <param name="list"></param>
+        </member>
+        <member name="M:PLEApp.Rectangle.draw(System.Drawing.Graphics)">
+            <summary>
+            Overriding the draw method from Shape class.
+            Specifically draws a rectangle with the help of Graphics.DrawRectangle method
+            uses the paramteres set from the set method
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="T:PLEApp.Shape">
+            <summary>
+            An abstract class Shape inherited from Shapes interface
+            Contains methods that need to be overerriden.
+            Also, some more specific properties of Shape like xaxis and yaxis.
+            </summary>
+        </member>
+        <member name="F:PLEApp.Shape.xaxis">
+            <summary>
+            Some specific properties of Shape class
+            Making these accessable throughout the namespace
+            </summary>
+        </member>
+        <member name="F:PLEApp.Shape.yaxis">
+            <summary>
+            Some specific properties of Shape class
+            Making these accessable throughout the namespace
+            </summary>
+        </member>
+        <member name="M:PLEApp.Shape.draw(System.Drawing.Graphics)">
+            <summary>
+            The draw method is yet again declared abstract.
+            postponing this method definition for more specific child version.
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:PLEApp.Shape.set(System.Drawing.Color,System.Boolean,System.Int32[])">
+            <summary>
+            Some properties of Shape class is reserved in the order in which they arrive.
+            ie Color, fill, xaxis and yaxis
+            </summary>
+            <param name="color"></param>
+            <param name="fill"></param>
+            <param name="list"></param>
+        </member>
+        <member name="T:PLEApp.ShapeFactory">
+            <summary>
+            Factory pattern is applied here.
+            This is an independent class, a common interface that creates/produces objects. 
+            </summary>
+        </member>
+        <member name="M:PLEApp.ShapeFactory.createShape(System.String)">
+            <summary>
+            Method that creates Shapes according to the shape type
+            </summary>
+            <param name="shapetype">the name of shape provided by user</param>
+            <returns>An object of a specific shape type </returns>
+        </member>
+        <member name="T:PLEApp.Shapes">
+            <summary>
+            The top most class of the Shape inheritance heriarchy, an interface to be particular.
+            Contains services(methods) offered by this interface.
+            </summary>
+        </member>
+        <member name="M:PLEApp.Shapes.set(System.Drawing.Color,System.Boolean,System.Int32[])">
+            <summary>
+            An abstract method 'set' that needs to be overrriden ahead.
+            Contains some basic properties of shapes like color.
+            </summary>
+            <param name="color">The color a shape might have</param>
+            <param name="fill">A property of shape to decide weather its painted</param>
+            <param name="list"> An integer array reserved for the shape Measurements </param>
+        </member>
+        <member name="M:PLEApp.Shapes.draw(System.Drawing.Graphics)">
+            <summary>
+            An abstract method 'draw' that needs to be overrriden ahead.
+            Method exists for drawing shape in picture box
+            </summary>
+            <param name="g">An object of Graphics on which we draw.</param>
+        </member>
+        <member name="T:PLEApp.Square">
+            <summary>
+            Square, a more specific version of Shape, class inherited from it.
+            Has some unique properties.
+            </summary>
+        </member>
+        <member name="F:PLEApp.Square.width">
+            <summary>
+            width, some unique properties of square class declared as integers 
+            </summary>
+        </member>
+        <member name="M:PLEApp.Square.set(System.Drawing.Color,System.Boolean,System.Int32[])">
+            <summary>
+            Method overrides the set method from Shapes class.
+            All the properties required for creating/drawing rectangle 
+            all come in the order:color,fill status , width and height
+            </summary>
+            <param name="color"> </param>
+            <param name="fill"></param>
+            <param name="list"></param>
+        </member>
+        <member name="M:PLEApp.Square.draw(System.Drawing.Graphics)">
+            <summary>
+            Overriding the draw method from Shape class.
+            Specifically draws a rectangle with the help of Graphics.DrawRectangle method
+            uses the paramteres set from the set method
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="T:PLEApp.Triangle">
+            <summary>
+            Triangle, a more specific version of Shape, class inherited from it.
+            Has some unique properties.
+            </summary>
+        </member>
+        <member name="F:PLEApp.Triangle.hypotenuse">
+            <summary>
+            height,breadth and perpendicular a unique property of Triangle, declared as integer
+            </summary>
+        </member>
+        <member name="F:PLEApp.Triangle.breadth">
+            <summary>
+            height,breadth and perpendicular a unique property of Triangle, declared as integer
+            </summary>
+        </member>
+        <member name="F:PLEApp.Triangle.perpendicular">
+            <summary>
+            height,breadth and perpendicular a unique property of Triangle, declared as integer
+            </summary>
+        </member>
+        <member name="M:PLEApp.Triangle.set(System.Drawing.Color,System.Boolean,System.Int32[])">
+            <summary>
+            ///Method overrides the set method from Shapes class.
+            All the properties required for creating/drawing triangle 
+            all come in the order:color,fill status and radius
+            </summary>
+            <param name="color"></param>
+            <param name="fill"></param>
+            <param name="list"></param>
+        </member>
+        <member name="M:PLEApp.Triangle.draw(System.Drawing.Graphics)">
+            <summary>
+            Overriding the draw method from Shape class.
+            Specifically draws a triangle with the help of Graphics.DrawPolygon method
+            uses the paramteres set from the set method
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="T:PLEApp.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PLEApp.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PLEApp.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:PLEApp.Properties.Resources.about">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLEApp.Properties.Resources.edit">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLEApp.Properties.Resources.exit">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLEApp.Properties.Resources.file">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLEApp.Properties.Resources.help">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLEApp.Properties.Resources.load">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:PLEApp.Properties.Resources.open">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>
